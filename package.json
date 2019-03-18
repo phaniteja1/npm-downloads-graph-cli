@@ -1,0 +1,38 @@
+{
+  "name": "yo-node-cli-skeleton",
+  "version": "0.0.0",
+  "description": "Show download stats for npm packages over time",
+  "author": {
+    "name": "Cesar Ferreira",
+    "email": "cesar.manuel.ferreira@gmail.com",
+    "url": "http://cesarferreira.com"
+  },
+  "scripts": {
+    "start": "node example.js",
+    "lint": "eslint src/**/*",
+    "test": "xo"
+  },
+  "bin": {
+    "yo-node-cli-skeleton": "cli.js"
+  },
+  "main": "cli.js",
+  "keywords": [],
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "meow": "^5.0.0",
+    "update-notifier": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "xo": "^0.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cesarferreira/yo-node-cli-skeleton.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cesarferreira/yo-node-cli-skeleton/issues"
+  },
+  "homepage": "https://github.com/cesarferreira/yo-node-cli-skeleton#readme",
+  "license": "MIT"
+}
