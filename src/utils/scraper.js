@@ -1,29 +1,35 @@
 const got = require("got");
 const cheerio = require("cheerio");
-const log = console.log;
 
-const stats = async username => {
+const getUrlFromFlag = flags => {
+  switch (true) {
+    case flags.ld:
+      return "last-day";
+    case flags.lw:
+      return "last-week";
+    case flags.lm:
+      return "last-month";
+    default:
+      return "last-week";
+  }
+};
+
+const stats = async flags => {
   const baseUrl = "https://api.npmjs.org/downloads/point/";
-  const lastWeek = "last-week/";
+  const range = `${getUrlFromFlag(flags)}/`;
   const packages = "npm,express";
 
-  const finalUrl = `${baseUrl}${lastWeek}${packages}`;
+  const finalUrl = `${baseUrl}${range}${packages}`;
 
   try {
     const response = await got(finalUrl);
-    return response.body;
+    console.log(response.body);
   } catch (error) {
     console.log(error.response.body);
-
     throw error;
   }
 };
 
-// module.exports = stats;
 module.exports = {
-  sayHello: () => {
-    return "Hello World!";
-  },
   getDownloadStats: stats
 };
-module.exports.default = stats;

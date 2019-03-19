@@ -7,15 +7,10 @@ const fs = require("fs");
 const Scraper = require("../utils/scraper.js");
 
 // Main code //
-const self = (module.exports = {
-  init: async input => {
-    if (input.length == 0) {
-      log(Chalk.red(`You need to specify a param`));
-      return;
-    }
-
-    var something = await Scraper.getDownloadStats();
-
-    log(`Package name with: ${input} ${something}`);
+module.exports = {
+  init: flags => {
+    // TODO: handle multiple flags
+    // TODO: Check if package exists in npm
+    Scraper.getDownloadStats(flags);
   }
-});
+};

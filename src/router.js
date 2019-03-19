@@ -13,14 +13,10 @@ const DownloadStatsTask = require("./tasks/download_stats_task");
 const self = (module.exports = {
   init: (input, flags) => {
     const command = input[0];
-    const params = input.subarray(1, input.length);
 
     switch (command.toLowerCase()) {
-      case "sample":
-        SampleTask.init(params);
-        break;
       case "ds":
-        DownloadStatsTask.init(params);
+        DownloadStatsTask.init(flags);
         break;
 
       default:
