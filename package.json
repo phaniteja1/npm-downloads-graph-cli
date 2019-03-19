@@ -1,9 +1,9 @@
 {
-  "name": "yo-node-cli-skeleton",
-  "version": "0.0.0",
+  "name": "npm-downloads-graph-cli",
+  "version": "q.0.0",
   "description": "Show download stats for npm packages over time",
   "author": {
-    "name": "Cesar Ferreira",
+    "name": "Phani Teja",
     "email": "cesar.manuel.ferreira@gmail.com",
     "url": "http://cesarferreira.com"
   },

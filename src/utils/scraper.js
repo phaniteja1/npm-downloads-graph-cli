@@ -1,5 +1,5 @@
 const got = require("got");
-const cheerio = require("cheerio");
+const Chalk = require("chalk");
 
 const getUrlFromFlag = flags => {
   switch (true) {
@@ -14,6 +14,14 @@ const getUrlFromFlag = flags => {
   }
 };
 
+const printDownloadData = data => {
+  for (var key in data) {
+    if (data.hasOwnProperty(key)) {
+      console.log(key + " -> " + data[key].downloads);
+    }
+  }
+};
+
 const stats = async flags => {
   const baseUrl = "https://api.npmjs.org/downloads/point/";
   const range = `${getUrlFromFlag(flags)}/`;
@@ -24,6 +32,7 @@ const stats = async flags => {
   try {
     const response = await got(finalUrl);
     console.log(response.body);
+    printDownloadData(JSON.parse(response.body));
   } catch (error) {
     console.log(error.response.body);
     throw error;

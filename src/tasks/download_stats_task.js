@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 "use strict";
-
-const Chalk = require("chalk");
-const log = console.log;
-const fs = require("fs");
 const Scraper = require("../utils/scraper.js");
 
 // Main code //
