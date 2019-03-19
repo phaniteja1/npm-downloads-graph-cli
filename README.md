@@ -1,37 +1,22 @@
-# yo-node-cli-skeleton
+# npm-downloads-graph-cli
+
 > Show download stats for npm packages over time
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/cesarferreira/assets/master/images/screenshot_terminal_hello_world.png" width="100%" />
-</p>
-
-[![Build Status](https://travis-ci.org/cesarferreira/yo-node-cli-skeleton.svg?branch=master)](https://travis-ci.org/cesarferreira/yo-node-cli-skeleton)
-[![npm](https://img.shields.io/npm/dt/yo-node-cli-skeleton.svg)](https://www.npmjs.com/package/yo-node-cli-skeleton)
-[![npm](https://img.shields.io/npm/v/yo-node-cli-skeleton.svg)](https://www.npmjs.com/package/yo-node-cli-skeleton)
-
-## Install
+<!-- ## Install
 
 ```sh
-yarn add yo-node-cli-skeleton
-```
+yarn add npm-downloads-graph-cli
+``` -->
 
 ## Usage
 
 ```
 Usage
 
-   $ yo-node-cli-skeleton <command> <params>
+   $ npm-downloads-graph-cli <command> <flag>
 
-   $ yo-node-cli-skeleton sample <param>             # Uses the <PARAM>
-   
  Examples
 
-   $ yo-node-cli-skeleton sample TEST                # Uses the TEST
-   $ yo-node-cli-skeleton sample YOLO                # Uses the YOLO
+   $ npm-downloads-graph-cli ds                         # Get the download statistics
+   $ npm-downloads-graph-cli ds --lw                    # last week download statistics
 ```
-
-## Created by
-[Cesar Ferreira](https://cesarferreira.com)
-
-## License
-MIT © [Cesar Ferreira](http://cesarferreira.com)
