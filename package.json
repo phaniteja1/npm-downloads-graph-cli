@@ -20,6 +20,7 @@
     "chalk": "^2.4.2",
     "got": "^9.6.0",
     "meow": "^5.0.0",
+    "moment": "^2.24.0",
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
@@ -28,11 +29,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cesarferreira/yo-node-cli-skeleton.git"
+    "url": "https://github.com/phaniteja1/npm-downloads-graph-cli.git"
   },
-  "bugs": {
-    "url": "https://github.com/cesarferreira/yo-node-cli-skeleton/issues"
-  },
-  "homepage": "https://github.com/cesarferreira/yo-node-cli-skeleton#readme",
+  "homepage": "https://github.com/phaniteja1/npm-downloads-graph-cli#readme",
   "license": "MIT"
 }

@@ -1,5 +1,6 @@
 const got = require("got");
 const Chalk = require("chalk");
+const moment = require("moment");
 
 const getUrlFromFlag = flags => {
   switch (true) {
@@ -17,7 +18,14 @@ const getUrlFromFlag = flags => {
 const printDownloadData = data => {
   for (var key in data) {
     if (data.hasOwnProperty(key)) {
-      console.log(key + " -> " + data[key].downloads);
+      console.log(
+        `${Chalk.blue(key)} ${moment(data[key].start)
+          .startOf("day")
+          .fromNow()} --> ${moment(data[key].end)
+          .startOf("day")
+          .fromNow()}`
+      );
+      console.log(Chalk.green(data[key].downloads));
     }
   }
 };
@@ -25,13 +33,12 @@ const printDownloadData = data => {
 const stats = async flags => {
   const baseUrl = "https://api.npmjs.org/downloads/point/";
   const range = `${getUrlFromFlag(flags)}/`;
-  const packages = "npm,express";
+  const packages = "react-hooks-giphy,react-hooks-barcode,react-csv-viewer";
 
   const finalUrl = `${baseUrl}${range}${packages}`;
 
   try {
     const response = await got(finalUrl);
-    console.log(response.body);
     printDownloadData(JSON.parse(response.body));
   } catch (error) {
     console.log(error.response.body);
