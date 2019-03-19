@@ -1,26 +1,30 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const Chalk = require('chalk');
-const Utils = require('./utils/utils');
+const Chalk = require("chalk");
+const Utils = require("./utils/utils");
 const log = console.log;
 
-const SampleTask = require('./tasks/sample_task');
+const SampleTask = require("./tasks/sample_task");
+
+const DownloadStatsTask = require("./tasks/download_stats_task");
 
 // Main code //
-const self = module.exports = {
-	init: (input, flags) => {
+const self = (module.exports = {
+  init: (input, flags) => {
+    const command = input[0];
+    const params = input.subarray(1, input.length);
 
-		const command = input[0];
-		const params = input.subarray(1, input.length);
+    switch (command.toLowerCase()) {
+      case "sample":
+        SampleTask.init(params);
+        break;
+      case "ds":
+        DownloadStatsTask.init(params);
+        break;
 
-		switch (command.toLowerCase()) {
-			case 'sample':
-				SampleTask.init(params);
-				break;
-		
-			default:
-				log(`Sorry, cant find ${command}`);
-		}
-	}
-};
+      default:
+        log(`Sorry, cant find ${command}`);
+    }
+  }
+});

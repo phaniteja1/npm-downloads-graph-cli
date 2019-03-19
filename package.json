@@ -19,6 +19,8 @@
   "keywords": [],
   "dependencies": {
     "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.2",
+    "got": "^9.6.0",
     "meow": "^5.0.0",
     "update-notifier": "^2.5.0"
   },
